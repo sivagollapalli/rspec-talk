@@ -1,5 +1,7 @@
 class ExamsController < ApplicationController
-  before_filter :find_student, :only => [:index, :create]
+  before_filter :authenticate_user!
+  load_and_authorize_resource
+  before_filter :find_student, :only => [:index]
 
   # GET /exams
   # GET /exams.json

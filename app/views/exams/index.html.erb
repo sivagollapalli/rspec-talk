@@ -6,6 +6,7 @@
     <th>Physics</th>
     <th>Chemistry</th>
     <th>Total</th>
+    <th>Remarks</th>
     <th></th>
     <th></th>
     <th></th>
@@ -17,6 +18,7 @@
     <td><%= exam.physics %></td>
     <td><%= exam.chemistry %></td>
     <td><%= exam.total %></td>
+    <td><%= remarks(exam)%></td>
     <td><%= link_to 'Show', exam %></td>
     <td><%= link_to 'Edit', edit_exam_path(exam) %></td>
     <td><%= link_to 'Destroy', exam, method: :delete, data: { confirm: 'Are you sure?' } %></td>

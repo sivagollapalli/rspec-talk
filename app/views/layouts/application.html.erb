@@ -8,7 +8,14 @@
 </head>
 <body>
 
+<%= flash[:notice] if flash[:notice]%>
+<%= flash[:error] if flash[:error]%>
+
 <%= yield %>
+
+<% if current_user %>
+  <%= link_to 'Signout', destroy_user_session_path, method: :delete %>
+<% end %>
 
 </body>
 </html>
