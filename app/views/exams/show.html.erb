@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Maths:</b>
+  <%= @exam.maths %>
+</p>
+
+<p>
+  <b>Physics:</b>
+  <%= @exam.physics %>
+</p>
+
+<p>
+  <b>Chemistry:</b>
+  <%= @exam.chemistry %>
+</p>
+
+<p>
+  <b>Total:</b>
+  <%= @exam.total %>
+</p>
+
+
+<%= link_to 'Edit', edit_exam_path(@exam) %> |
+<%= link_to 'Back', exams_path %>
