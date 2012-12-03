@@ -9,6 +9,8 @@ require 'rspec/autorun'
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
 RSpec.configure do |config|
+  config.mock_framework = :rspec
+  config.expect_with :stdlib, :rspec
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.
@@ -26,4 +28,10 @@ RSpec.configure do |config|
   config.order = "random"
   config.include FactoryGirl::Syntax::Methods
   config.include Devise::TestHelpers, :type => :controller
+
+  config.filter_run_including :model => true
+  #config.filter_run_excluding :model => true
+
+  #config.filter_run :model => "run everything"
+  #config.run_all_when_everything_filtered = true
 end

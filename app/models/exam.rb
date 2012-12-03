@@ -7,6 +7,8 @@ class Exam < ActiveRecord::Base
 
   after_validation :calculate_total
 
+  scope :top_performances, where('total > ?', 240)
+
   def calculate_total
     update_attribute(:total, maths + chemistry + physics)
   end

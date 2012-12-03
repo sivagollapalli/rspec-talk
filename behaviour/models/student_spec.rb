@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Student, :model => true do
+describe Student, :model => "test" do
   specify { should validate_presence_of(:first_name) }
   it { should validate_uniqueness_of(:email) }
 
